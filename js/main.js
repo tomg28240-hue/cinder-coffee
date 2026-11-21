@@ -174,19 +174,9 @@ if (menuSection && menuCards.length) {
   });
 }
 
-// Gallery photos: simple hover scale (no scatter to avoid overflow)
+// Gallery photos: no hover transform to avoid overflow
 const galleryScroll = document.querySelector(".h-scroll");
-if (galleryScroll) {
-  const photos = galleryScroll.querySelectorAll("div");
-  photos.forEach((photo) => {
-    photo.addEventListener("mouseenter", () => {
-      gsap.to(photo, { scale: 1.05, y: -8, duration: 0.3, ease: "power2.out" });
-    });
-    photo.addEventListener("mouseleave", () => {
-      gsap.to(photo, { scale: 1, y: 0, duration: 0.3, ease: "power2.out" });
-    });
-  });
-}
+// (hover highlight handled by CSS)
 
 // Header hide on scroll down
 let lastScroll = 0;

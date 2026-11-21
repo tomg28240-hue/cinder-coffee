@@ -121,8 +121,7 @@ body.js-loaded .reveal.visible {
   transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
 }
 .h-scroll > div:hover {
-  transform: scale(1.08) translateY(-12px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 2px #d6a160;
+  box-shadow: 0 0 0 2px #d6a160;
   z-index: 10;
 }
 
