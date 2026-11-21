@@ -134,6 +134,8 @@ body.js-loaded .reveal.visible {
   transform-origin: bottom center;
   cursor: pointer;
   border: 2px solid rgba(214, 161, 96, 0.3);
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 .card img {
   width: 100%;
@@ -147,7 +149,7 @@ body.js-loaded .reveal.visible {
 }
 .card:nth-child(2) {
   transform: rotate(0deg) translateX(0) translateY(-8px);
-  z-index: 2;
+  z-index: 3;
 }
 .card:nth-child(3) {
   transform: rotate(14deg) translateX(70px) translateY(12px);
@@ -169,7 +171,7 @@ body.js-loaded .reveal.visible {
 
 .card:hover {
   transform: rotate(0deg) scale(1.12) translateY(-24px) !important;
-  z-index: 10 !important;
+  z-index: 20 !important;
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5), 0 0 0 2px #d6a160;
 }
 
