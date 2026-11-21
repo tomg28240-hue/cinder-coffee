@@ -84,13 +84,17 @@ html { scroll-behavior: smooth; }
   50% { transform: translateY(-15px) rotate(20deg); }
 }
 
-/* Reveal on scroll */
+/* Reveal on scroll — fallback: visible by default if JS fails */
 .reveal {
-  opacity: 0;
-  transform: translateY(40px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
-.reveal.visible {
+body.js-loaded .reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+body.js-loaded .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -107,6 +111,23 @@ html { scroll-behavior: smooth; }
 
 /* Smooth transitions */
 * { transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); }
+
+/* Horizontal gallery */
+.h-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.h-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.h-scroll::-webkit-scrollbar-track {
+  background: rgba(57, 38, 30, 0.5);
+  border-radius: 3px;
+}
+.h-scroll::-webkit-scrollbar-thumb {
+  background: #d6a160;
+  border-radius: 3px;
+}
 
 /* Hero background beans larger */
 .hero-bean {

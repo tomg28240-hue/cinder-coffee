@@ -1,3 +1,6 @@
+// Mark JS as loaded (enables CSS reveal animations)
+document.body.classList.add('js-loaded');
+
 // GSAP setup
 gsap.registerPlugin(ScrollTrigger);
 
