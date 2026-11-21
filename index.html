@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cinder Coffee — Кофейня</title>
+  <meta name="description" content="Уютная кофейня Cinder Coffee. Капучино, латте, мокка. Бронирование столиков." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-[#39261e] text-[#e5cfa7] font-sans antialiased">
+  <!-- Header -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#39261e]/80 border-b border-[#d6a160]/20 transition-transform duration-300">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <img src="images/logo.svg" alt="Cinder Coffee" class="w-8 h-8" />
+        <span class="font-serif text-xl text-[#e5cfa7] tracking-wide">Cinder Coffee</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#меню" class="text-[#e5cfa7]/80 hover:text-[#d6a160] transition-colors">Меню</a>
+        <a href="#о-нас" class="text-[#e5cfa7]/80 hover:text-[#d6a160] transition-colors">О нас</a>
+        <a href="#галерея" class="text-[#e5cfa7]/80 hover:text-[#d6a160] transition-colors">Галерея</a>
+        <a href="#бронирование" class="text-[#e5cfa7]/80 hover:text-[#d6a160] transition-colors">Бронирование</a>
+      </div>
+      <a href="#бронирование" class="px-5 py-2 bg-[#d6a160] text-[#39261e] rounded-full text-sm font-medium hover:bg-[#e5cfa7] transition-colors">
+        Забронировать
+      </a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="relative h-screen overflow-hidden">
+    <div class="hero-bg absolute inset-0">
+      <img src="images/hero.jpg" alt="Cinder Coffee" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-b from-[#39261e]/60 via-[#39261e]/40 to-[#39261e]"></div>
+    </div>
+    <div class="absolute inset-0 pointer-events-none">
+      <span class="bean" style="left:15%;top:20%"></span>
+      <span class="bean" style="left:29%;top:40%"></span>
+      <span class="bean" style="left:43%;top:25%"></span>
+      <span class="bean" style="left:57%;top:55%"></span>
+      <span class="bean" style="left:71%;top:30%"></span>
+      <span class="bean" style="left:85%;top:50%"></span>
+    </div>
+    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+      <p class="hero-sub text-[#d6a160] tracking-[0.3em] uppercase text-sm mb-4 opacity-0">Уютная кофейня</p>
+      <h1 class="hero-title font-serif text-6xl md:text-8xl text-[#e5cfa7] mb-6 opacity-0">Cinder Coffee</h1>
+      <p class="hero-desc text-[#e5cfa7]/80 text-lg md:text-xl max-w-xl mb-8 opacity-0">
+        Каждая чашка — маленькая история. Капучино, латте, мокка, приготовленные с любовью и вниманием к деталям.
+      </p>
+      <a href="#меню" class="hero-cta px-8 py-4 bg-[#d6a160] text-[#39261e] rounded-full font-medium text-lg hover:bg-[#e5cfa7] transition-colors opacity-0">
+        Смотреть меню
+      </a>
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#d6a160]/60 animate-bounce">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="меню" class="py-24 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-[#d6a160] tracking-[0.3em] uppercase text-sm mb-3">Наше меню</p>
+      <h2 class="font-serif text-4xl md:text-6xl text-[#e5cfa7]">Кофейная карта</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="menu-card bg-[#4a3429]/50 rounded-2xl overflow-hidden border border-[#d6a160]/10 hover:border-[#d6a160]/40 transition-colors reveal">
+        <div class="relative h-64 overflow-hidden">
+          <img src="images/cappuccino.jpg" alt="Cappuccino" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#39261e]/80 to-transparent"></div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-serif text-2xl text-[#e5cfa7]">Cappuccino</h3>
+            <span class="text-[#d6a160] font-medium">280 ₽</span>
+          </div>
+          <p class="text-[#e5cfa7]/70 text-sm leading-relaxed">Классический капучино с нежной молочной пенкой и латте-артом</p>
+        </div>
+      </div>
+      <div class="menu-card bg-[#4a3429]/50 rounded-2xl overflow-hidden border border-[#d6a160]/10 hover:border-[#d6a160]/40 transition-colors reveal">
+        <div class="relative h-64 overflow-hidden">
+          <img src="images/latte.jpg" alt="Latte" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#39261e]/80 to-transparent"></div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-serif text-2xl text-[#e5cfa7]">Latte</h3>
+            <span class="text-[#d6a160] font-medium">320 ₽</span>
+          </div>
+          <p class="text-[#e5cfa7]/70 text-sm leading-relaxed">Мягкий латте с бархатистой текстурой и тонким вкусом</p>
+        </div>
+      </div>
+      <div class="menu-card bg-[#4a3429]/50 rounded-2xl overflow-hidden border border-[#d6a160]/10 hover:border-[#d6a160]/40 transition-colors reveal">
+        <div class="relative h-64 overflow-hidden">
+          <img src="images/mocha.jpg" alt="Mocha" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#39261e]/80 to-transparent"></div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-serif text-2xl text-[#e5cfa7]">Mocha</h3>
+            <span class="text-[#d6a160] font-medium">350 ₽</span>
+          </div>
+          <p class="text-[#e5cfa7]/70 text-sm leading-relaxed">Мокка с шоколадом и взбитыми сливками — сладкое удовольствие</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="о-нас" class="py-24 px-6 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <p class="text-[#d6a160] tracking-[0.3em] uppercase text-sm mb-3">О нас</p>
+        <h2 class="font-serif text-4xl md:text-5xl text-[#e5cfa7] mb-6">Больше, чем просто кофе</h2>
+        <p class="text-[#e5cfa7]/80 leading-relaxed mb-4">
+          Cinder Coffee — это место, где время замедляется. Мы обжариваем зёрна
+          небольшими партиями, чтобы сохранить каждый оттенок вкуса. Наш бариста
+          знает, как приготовить идеальный капучино, а интерьер располагает к
+          долгим разговорам и тихим утрам.
+        </p>
+        <p class="text-[#e5cfa7]/80 leading-relaxed">
+          Мы верим, что кофе — это ритуал. От выбора зерна до последней капли
+          в чашке — каждый шаг важен. Приходите, и мы приготовим для вас
+          что-то особенное.
+        </p>
+      </div>
+      <div class="relative h-[500px] rounded-2xl overflow-hidden reveal">
+        <img src="images/gallery-1.jpg" alt="Интерьер кофейни" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#39261e]/60 to-transparent"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="галерея" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 reveal">
+        <p class="text-[#d6a160] tracking-[0.3em] uppercase text-sm mb-3">Галерея</p>
+        <h2 class="font-serif text-4xl md:text-6xl text-[#e5cfa7]">Атмосфера</h2>
+      </div>
+      <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+        <div class="break-inside-avoid overflow-hidden rounded-xl reveal cursor-pointer" onclick="openLightbox(0)">
+          <img src="images/gallery-1.jpg" alt="Интерьер" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="break-inside-avoid overflow-hidden rounded-xl reveal cursor-pointer" onclick="openLightbox(1)">
+          <img src="images/gallery-2.jpg" alt="Стойка" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="break-inside-avoid overflow-hidden rounded-xl reveal cursor-pointer" onclick="openLightbox(2)">
+          <img src="images/gallery-3.jpg" alt="Уют" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="break-inside-avoid overflow-hidden rounded-xl reveal cursor-pointer" onclick="openLightbox(3)">
+          <img src="images/gallery-4.jpg" alt="Детали" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="break-inside-avoid overflow-hidden rounded-xl reveal cursor-pointer" onclick="openLightbox(4)">
+          <img src="images/gallery-5.jpg" alt="Зёрна" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="break-inside-avoid overflow-hidden rounded-xl reveal cursor-pointer" onclick="openLightbox(5)">
+          <img src="images/hero.jpg" alt="Атмосфера" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-6" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] object-contain" />
+  </div>
+
+  <!-- Booking -->
+  <section id="бронирование" class="py-24 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <p class="text-[#d6a160] tracking-[0.3em] uppercase text-sm mb-3">Бронирование</p>
+        <h2 class="font-serif text-4xl md:text-6xl text-[#e5cfa7]">Забронировать стол</h2>
+      </div>
+      <form id="booking-form" class="space-y-5 reveal" onsubmit="handleSubmit(event)">
+        <div class="grid md:grid-cols-2 gap-5">
+          <input type="text" placeholder="Ваше имя" required class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] placeholder-[#e5cfa7]/40 focus:outline-none focus:border-[#d6a160] transition-colors" />
+          <input type="tel" placeholder="Телефон" required class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] placeholder-[#e5cfa7]/40 focus:outline-none focus:border-[#d6a160] transition-colors" />
+        </div>
+        <div class="grid md:grid-cols-3 gap-5">
+          <input type="date" required class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] focus:outline-none focus:border-[#d6a160] transition-colors" />
+          <input type="time" required class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] focus:outline-none focus:border-[#d6a160] transition-colors" />
+          <select required class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] focus:outline-none focus:border-[#d6a160] transition-colors">
+            <option value="">Гостей</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+        <textarea placeholder="Пожелания (необязательно)" rows="3" class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] placeholder-[#e5cfa7]/40 focus:outline-none focus:border-[#d6a160] transition-colors resize-none"></textarea>
+        <button type="submit" class="w-full py-4 bg-[#d6a160] text-[#39261e] rounded-xl font-medium text-lg hover:bg-[#e5cfa7] transition-colors">
+          Забронировать
+        </button>
+      </form>
+      <div id="booking-success" class="hidden text-center py-12">
+        <div class="text-5xl mb-4">☕</div>
+        <h3 class="font-serif text-3xl text-[#e5cfa7] mb-2">Спасибо!</h3>
+        <p class="text-[#e5cfa7]/70">Мы свяжемся с вами для подтверждения брони.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-[#d6a160]/20 py-12 px-6">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="font-serif text-2xl text-[#e5cfa7] mb-3">Cinder Coffee</h3>
+        <p class="text-[#e5cfa7]/60 text-sm">Уютная кофейня в самом сердце города. Приходите за кофе, оставайтесь за атмосферой.</p>
+      </div>
+      <div>
+        <h4 class="text-[#d6a160] text-sm uppercase tracking-wider mb-3">Контакты</h4>
+        <p class="text-[#e5cfa7]/70 text-sm">ул. Кофейная, 12</p>
+        <p class="text-[#e5cfa7]/70 text-sm">+7 (999) 123-45-67</p>
+        <p class="text-[#e5cfa7]/70 text-sm">hello@cindercoffee.ru</p>
+      </div>
+      <div>
+        <h4 class="text-[#d6a160] text-sm uppercase tracking-wider mb-3">Часы работы</h4>
+        <p class="text-[#e5cfa7]/70 text-sm">Пн–Пт: 8:00 – 22:00</p>
+        <p class="text-[#e5cfa7]/70 text-sm">Сб–Вс: 9:00 – 23:00</p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-[#d6a160]/10 text-center text-[#e5cfa7]/40 text-xs">
+      © 2026 Cinder Coffee. Все права защищены.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

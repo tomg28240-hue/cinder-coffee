@@ -1,0 +1,54 @@
+:root {
+  --espresso: #39261e;
+  --caramel: #d6a160;
+  --cream: #e5cfa7;
+}
+
+html { scroll-behavior: smooth; }
+
+.font-serif { font-family: 'Playfair Display', serif; }
+.font-sans { font-family: 'Inter', system-ui, sans-serif; }
+
+/* Floating beans */
+.bean {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(214, 161, 96, 0.4);
+  animation: float 3s ease-in-out infinite;
+}
+.bean:nth-child(2) { animation-delay: 0.4s; animation-duration: 3.5s; }
+.bean:nth-child(3) { animation-delay: 0.8s; animation-duration: 4s; }
+.bean:nth-child(4) { animation-delay: 1.2s; animation-duration: 3.2s; }
+.bean:nth-child(5) { animation-delay: 1.6s; animation-duration: 3.8s; }
+.bean:nth-child(6) { animation-delay: 2.0s; animation-duration: 4.2s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); opacity: 0.3; }
+  50% { transform: translateY(-20px); opacity: 0.7; }
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero parallax */
+.hero-bg img {
+  will-change: transform;
+}
+
+/* Lightbox */
+#lightbox.active {
+  display: flex !important;
+}
+
+/* Smooth transitions */
+* { transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1); }
