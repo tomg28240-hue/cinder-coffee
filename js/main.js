@@ -138,19 +138,20 @@ if (menuSection && menuCards.length) {
   });
 }
 
-// Gallery photos scatter on container hover
+// Gallery photos scatter on container hover (3 photos, beautiful spread)
 const galleryScroll = document.querySelector(".h-scroll");
 if (galleryScroll) {
   const photos = galleryScroll.querySelectorAll("div");
   galleryScroll.addEventListener("mouseenter", () => {
     photos.forEach((photo, i) => {
-      const offset = (i - photos.length / 2) * 12;
-      gsap.to(photo, { x: offset, y: -6, duration: 0.4, ease: "power2.out" });
+      const offsets = [-40, 0, 40];
+      const rotations = [-5, 0, 5];
+      gsap.to(photo, { x: offsets[i] || 0, y: -15, rotation: rotations[i] || 0, scale: 1.05, duration: 0.5, ease: "power3.out" });
     });
   });
   galleryScroll.addEventListener("mouseleave", () => {
     photos.forEach((photo) => {
-      gsap.to(photo, { x: 0, y: 0, duration: 0.4, ease: "power2.out" });
+      gsap.to(photo, { x: 0, y: 0, rotation: 0, scale: 1, duration: 0.5, ease: "power3.out" });
     });
   });
 }
