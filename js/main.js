@@ -19,6 +19,20 @@ gsap.to(".hero-bg img", {
   },
 });
 
+// Parallax for decorative beans
+gsap.utils.toArray(".coffee-bean-deco").forEach((bean, i) => {
+  gsap.to(bean, {
+    y: -30 - i * 10,
+    ease: "none",
+    scrollTrigger: {
+      trigger: bean.parentElement,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    },
+  });
+});
+
 // Reveal on scroll
 const reveals = document.querySelectorAll(".reveal");
 reveals.forEach((el) => {
@@ -67,13 +81,37 @@ function closeLightbox() {
 }
 window.closeLightbox = closeLightbox;
 
-// Booking form
-function handleSubmit(e) {
-  e.preventDefault();
-  document.getElementById("booking-form").classList.add("hidden");
-  document.getElementById("booking-success").classList.remove("hidden");
+// Booking form — AJAX via FormSubmit
+const form = document.getElementById("booking-form");
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector("button[type=submit]");
+    const originalText = btn.textContent;
+    btn.textContent = "Отправка...";
+    btn.disabled = true;
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(form.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: formData,
+      });
+
+      if (response.ok) {
+        form.classList.add("hidden");
+        document.getElementById("booking-success").classList.remove("hidden");
+      } else {
+        throw new Error("Ошибка отправки");
+      }
+    } catch (err) {
+      alert("Не удалось отправить бронь. Попробуйте позже или позвоните нам.");
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }
+  });
 }
-window.handleSubmit = handleSubmit;
 
 // Header hide on scroll down
 let lastScroll = 0;

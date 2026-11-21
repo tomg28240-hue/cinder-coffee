@@ -13,7 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="bg-[#39261e] text-[#e5cfa7] font-sans antialiased">
+<body class="bg-[#39261e] text-[#e5cfa7] font-sans antialiased overflow-x-hidden">
   <!-- Header -->
   <header id="header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#39261e]/80 border-b border-[#d6a160]/20 transition-transform duration-300">
     <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -39,15 +39,16 @@
       <img src="images/hero.jpg" alt="Cinder Coffee" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-gradient-to-b from-[#39261e]/60 via-[#39261e]/40 to-[#39261e]"></div>
     </div>
-    <div class="absolute inset-0 pointer-events-none">
-      <span class="bean" style="left:15%;top:20%"></span>
-      <span class="bean" style="left:29%;top:40%"></span>
-      <span class="bean" style="left:43%;top:25%"></span>
-      <span class="bean" style="left:57%;top:55%"></span>
-      <span class="bean" style="left:71%;top:30%"></span>
-      <span class="bean" style="left:85%;top:50%"></span>
+    <!-- Floating beans -->
+    <div class="absolute inset-0 pointer-events-none z-10">
+      <span class="hero-bean" style="left:8%;top:15%"></span>
+      <span class="hero-bean" style="left:22%;top:60%;animation-delay:0.5s"></span>
+      <span class="hero-bean" style="left:40%;top:25%;animation-delay:1s"></span>
+      <span class="hero-bean" style="left:60%;top:70%;animation-delay:1.5s"></span>
+      <span class="hero-bean" style="left:75%;top:20%;animation-delay:2s"></span>
+      <span class="hero-bean" style="left:88%;top:55%;animation-delay:2.5s"></span>
     </div>
-    <div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+    <div class="relative z-20 h-full flex flex-col items-center justify-center text-center px-6">
       <p class="hero-sub text-[#d6a160] tracking-[0.3em] uppercase text-sm mb-4 opacity-0">Уютная кофейня</p>
       <h1 class="hero-title font-serif text-6xl md:text-8xl text-[#e5cfa7] mb-6 opacity-0">Cinder Coffee</h1>
       <p class="hero-desc text-[#e5cfa7]/80 text-lg md:text-xl max-w-xl mb-8 opacity-0">
@@ -57,7 +58,7 @@
         Смотреть меню
       </a>
     </div>
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#d6a160]/60 animate-bounce">
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-[#d6a160]/60 animate-bounce z-20">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M12 5v14M5 12l7 7 7-7" />
       </svg>
@@ -65,12 +66,16 @@
   </section>
 
   <!-- Menu -->
-  <section id="меню" class="py-24 px-6 max-w-7xl mx-auto">
-    <div class="text-center mb-16 reveal">
+  <section id="меню" class="py-24 px-6 max-w-7xl mx-auto relative">
+    <!-- Decorative beans -->
+    <span class="coffee-bean-deco anim" style="top:10%;left:5%"></span>
+    <span class="coffee-bean-deco anim" style="top:30%;right:8%;animation-delay:1s"></span>
+    <span class="coffee-bean-deco anim" style="bottom:15%;left:12%;animation-delay:2s"></span>
+    <div class="text-center mb-16 reveal relative z-10">
       <p class="text-[#d6a160] tracking-[0.3em] uppercase text-sm mb-3">Наше меню</p>
       <h2 class="font-serif text-4xl md:text-6xl text-[#e5cfa7]">Кофейная карта</h2>
     </div>
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-3 gap-8 relative z-10">
       <div class="menu-card bg-[#4a3429]/50 rounded-2xl overflow-hidden border border-[#d6a160]/10 hover:border-[#d6a160]/40 transition-colors reveal">
         <div class="relative h-64 overflow-hidden">
           <img src="images/cappuccino.jpg" alt="Cappuccino" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
@@ -114,8 +119,10 @@
   </section>
 
   <!-- About -->
-  <section id="о-нас" class="py-24 px-6 overflow-hidden">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+  <section id="о-нас" class="py-24 px-6 overflow-hidden relative">
+    <span class="coffee-bean-deco anim" style="top:5%;right:3%;animation-delay:0.5s"></span>
+    <span class="coffee-bean-deco anim" style="bottom:10%;left:5%;animation-delay:1.5s"></span>
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
       <div class="reveal">
         <p class="text-[#d6a160] tracking-[0.3em] uppercase text-sm mb-3">О нас</p>
         <h2 class="font-serif text-4xl md:text-5xl text-[#e5cfa7] mb-6">Больше, чем просто кофе</h2>
@@ -139,8 +146,10 @@
   </section>
 
   <!-- Gallery -->
-  <section id="галерея" class="py-24 px-6">
-    <div class="max-w-7xl mx-auto">
+  <section id="галерея" class="py-24 px-6 relative">
+    <span class="coffee-bean-deco anim" style="top:8%;left:2%;animation-delay:0.3s"></span>
+    <span class="coffee-bean-deco anim" style="bottom:5%;right:4%;animation-delay:1.8s"></span>
+    <div class="max-w-7xl mx-auto relative z-10">
       <div class="text-center mb-16 reveal">
         <p class="text-[#d6a160] tracking-[0.3em] uppercase text-sm mb-3">Галерея</p>
         <h2 class="font-serif text-4xl md:text-6xl text-[#e5cfa7]">Атмосфера</h2>
@@ -174,21 +183,27 @@
   </div>
 
   <!-- Booking -->
-  <section id="бронирование" class="py-24 px-6">
-    <div class="max-w-3xl mx-auto">
+  <section id="бронирование" class="py-24 px-6 relative">
+    <span class="coffee-bean-deco anim" style="top:5%;right:5%;animation-delay:0.7s"></span>
+    <span class="coffee-bean-deco anim" style="bottom:8%;left:3%;animation-delay:2.2s"></span>
+    <div class="max-w-3xl mx-auto relative z-10">
       <div class="text-center mb-12 reveal">
         <p class="text-[#d6a160] tracking-[0.3em] uppercase text-sm mb-3">Бронирование</p>
         <h2 class="font-serif text-4xl md:text-6xl text-[#e5cfa7]">Забронировать стол</h2>
       </div>
-      <form id="booking-form" class="space-y-5 reveal" onsubmit="handleSubmit(event)">
+      <!-- FormSubmit: замените YOUR_EMAIL на ваш email -->
+      <form id="booking-form" action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST" class="space-y-5 reveal" onsubmit="handleSubmit(event)">
+        <input type="hidden" name="_subject" value="Новая бронь — Cinder Coffee" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
         <div class="grid md:grid-cols-2 gap-5">
-          <input type="text" placeholder="Ваше имя" required class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] placeholder-[#e5cfa7]/40 focus:outline-none focus:border-[#d6a160] transition-colors" />
-          <input type="tel" placeholder="Телефон" required class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] placeholder-[#e5cfa7]/40 focus:outline-none focus:border-[#d6a160] transition-colors" />
+          <input type="text" name="name" placeholder="Ваше имя" required class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] placeholder-[#e5cfa7]/40 focus:outline-none focus:border-[#d6a160] transition-colors" />
+          <input type="tel" name="phone" placeholder="Телефон" required class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] placeholder-[#e5cfa7]/40 focus:outline-none focus:border-[#d6a160] transition-colors" />
         </div>
         <div class="grid md:grid-cols-3 gap-5">
-          <input type="date" required class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] focus:outline-none focus:border-[#d6a160] transition-colors" />
-          <input type="time" required class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] focus:outline-none focus:border-[#d6a160] transition-colors" />
-          <select required class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] focus:outline-none focus:border-[#d6a160] transition-colors">
+          <input type="date" name="date" required class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] focus:outline-none focus:border-[#d6a160] transition-colors" />
+          <input type="time" name="time" required class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] focus:outline-none focus:border-[#d6a160] transition-colors" />
+          <select name="guests" required class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] focus:outline-none focus:border-[#d6a160] transition-colors">
             <option value="">Гостей</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -198,7 +213,7 @@
             <option value="6">6</option>
           </select>
         </div>
-        <textarea placeholder="Пожелания (необязательно)" rows="3" class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] placeholder-[#e5cfa7]/40 focus:outline-none focus:border-[#d6a160] transition-colors resize-none"></textarea>
+        <textarea name="wishes" placeholder="Пожелания (необязательно)" rows="3" class="w-full px-5 py-3 bg-[#4a3429]/50 border border-[#d6a160]/20 rounded-xl text-[#e5cfa7] placeholder-[#e5cfa7]/40 focus:outline-none focus:border-[#d6a160] transition-colors resize-none"></textarea>
         <button type="submit" class="w-full py-4 bg-[#d6a160] text-[#39261e] rounded-xl font-medium text-lg hover:bg-[#e5cfa7] transition-colors">
           Забронировать
         </button>
@@ -212,8 +227,10 @@
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-[#d6a160]/20 py-12 px-6">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+  <footer class="border-t border-[#d6a160]/20 py-12 px-6 relative">
+    <span class="coffee-bean-deco anim" style="top:10%;right:5%;animation-delay:1s"></span>
+    <span class="coffee-bean-deco anim" style="bottom:15%;left:8%;animation-delay:2.5s"></span>
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 relative z-10">
       <div>
         <h3 class="font-serif text-2xl text-[#e5cfa7] mb-3">Cinder Coffee</h3>
         <p class="text-[#e5cfa7]/60 text-sm">Уютная кофейня в самом сердце города. Приходите за кофе, оставайтесь за атмосферой.</p>
@@ -230,7 +247,7 @@
         <p class="text-[#e5cfa7]/70 text-sm">Сб–Вс: 9:00 – 23:00</p>
       </div>
     </div>
-    <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-[#d6a160]/10 text-center text-[#e5cfa7]/40 text-xs">
+    <div class="max-w-7xl mx-auto mt-8 pt-6 border-t border-[#d6a160]/10 text-center text-[#e5cfa7]/40 text-xs relative z-10">
       © 2026 Cinder Coffee. Все права защищены.
     </div>
   </footer>
