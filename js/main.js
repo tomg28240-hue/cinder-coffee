@@ -121,6 +121,40 @@ if (form) {
   });
 }
 
+// Menu cards scatter on section hover
+const menuSection = document.getElementById("меню");
+const menuCards = document.querySelectorAll(".menu-card");
+if (menuSection && menuCards.length) {
+  menuSection.addEventListener("mouseenter", () => {
+    menuCards.forEach((card, i) => {
+      const offset = (i - 1) * 20;
+      gsap.to(card, { x: offset, y: -8, duration: 0.4, ease: "power2.out" });
+    });
+  });
+  menuSection.addEventListener("mouseleave", () => {
+    menuCards.forEach((card) => {
+      gsap.to(card, { x: 0, y: 0, duration: 0.4, ease: "power2.out" });
+    });
+  });
+}
+
+// Gallery photos scatter on container hover
+const galleryScroll = document.querySelector(".h-scroll");
+if (galleryScroll) {
+  const photos = galleryScroll.querySelectorAll("div");
+  galleryScroll.addEventListener("mouseenter", () => {
+    photos.forEach((photo, i) => {
+      const offset = (i - photos.length / 2) * 12;
+      gsap.to(photo, { x: offset, y: -6, duration: 0.4, ease: "power2.out" });
+    });
+  });
+  galleryScroll.addEventListener("mouseleave", () => {
+    photos.forEach((photo) => {
+      gsap.to(photo, { x: 0, y: 0, duration: 0.4, ease: "power2.out" });
+    });
+  });
+}
+
 // Header hide on scroll down
 let lastScroll = 0;
 const header = document.getElementById("header");

@@ -117,6 +117,25 @@ body.js-loaded .reveal.visible {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
+.h-scroll > div {
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease;
+}
+.h-scroll > div:hover {
+  transform: scale(1.08) translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 2px #d6a160;
+  z-index: 10;
+}
+
+/* Menu cards hover scatter */
+.menu-card {
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+.menu-card:hover {
+  transform: scale(1.05) translateY(-12px) rotate(1deg);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.4), 0 0 0 2px #d6a160;
+  border-color: rgba(214,161,96,0.6);
+  z-index: 10;
+}
 .h-scroll::-webkit-scrollbar {
   height: 6px;
 }
