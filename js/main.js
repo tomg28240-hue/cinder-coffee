@@ -38,7 +38,7 @@ const reveals = document.querySelectorAll(".reveal");
 reveals.forEach((el) => {
   ScrollTrigger.create({
     trigger: el,
-    start: "top 85%",
+    start: "top 95%",
     onEnter: () => el.classList.add("visible"),
   });
 });
