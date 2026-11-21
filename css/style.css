@@ -44,23 +44,20 @@ html { scroll-behavior: smooth; }
 /* Decorative coffee beans scattered */
 .coffee-bean-deco {
   position: absolute;
-  width: 24px;
-  height: 32px;
+  width: 40px;
+  height: 52px;
+  background-image: url('../images/bean-dark.jpg');
+  background-size: cover;
+  background-position: center;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  background: linear-gradient(135deg, rgba(214,161,96,0.15), rgba(214,161,96,0.05));
+  opacity: 0.45;
+  filter: brightness(0.85) saturate(0.9);
   pointer-events: none;
   z-index: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 .coffee-bean-deco::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 2px;
-  height: 16px;
-  background: rgba(57, 38, 30, 0.2);
-  border-radius: 1px;
+  display: none;
 }
 .coffee-bean-deco.anim {
   animation: beanFloat 6s ease-in-out infinite;
@@ -97,23 +94,17 @@ html { scroll-behavior: smooth; }
 /* Hero background beans larger */
 .hero-bean {
   position: absolute;
-  width: 20px;
-  height: 26px;
+  width: 30px;
+  height: 38px;
+  background-image: url('../images/bean-dark.jpg');
+  background-size: cover;
+  background-position: center;
   border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-  background: rgba(214, 161, 96, 0.2);
+  opacity: 0.35;
+  filter: brightness(0.8) saturate(0.9);
   pointer-events: none;
   animation: heroBeanFloat 4s ease-in-out infinite;
-}
-.hero-bean::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 2px;
-  height: 12px;
-  background: rgba(57, 38, 30, 0.3);
-  border-radius: 1px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
 @keyframes heroBeanFloat {
   0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.2; }
