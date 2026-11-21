@@ -39,6 +39,11 @@ gsap.utils.toArray(".coffee-bean-deco").forEach((bean, i) => {
 // Reveal on scroll
 const reveals = document.querySelectorAll(".reveal");
 reveals.forEach((el) => {
+  // If already in viewport on load, show immediately
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight * 0.95) {
+    el.classList.add("visible");
+  }
   ScrollTrigger.create({
     trigger: el,
     start: "top 95%",
