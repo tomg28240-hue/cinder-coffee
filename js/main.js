@@ -73,12 +73,18 @@ const photos = [
   "images/hero.jpg",
 ];
 
+let currentPhotoIndex = 0;
+
 function openLightbox(i) {
+  currentPhotoIndex = i;
   const lb = document.getElementById("lightbox");
   const img = document.getElementById("lightbox-img");
+  const counter = document.getElementById("lightbox-counter");
   img.src = photos[i];
+  if (counter) counter.textContent = (i + 1) + " / " + photos.length;
   lb.classList.add("active");
   lb.style.display = "flex";
+  document.body.style.overflow = "hidden";
 }
 window.openLightbox = openLightbox;
 
@@ -86,8 +92,38 @@ function closeLightbox() {
   const lb = document.getElementById("lightbox");
   lb.classList.remove("active");
   lb.style.display = "none";
+  document.body.style.overflow = "";
 }
 window.closeLightbox = closeLightbox;
+
+function nextPhoto() {
+  currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+  openLightbox(currentPhotoIndex);
+}
+window.nextPhoto = nextPhoto;
+
+function prevPhoto() {
+  currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
+  openLightbox(currentPhotoIndex);
+}
+window.prevPhoto = prevPhoto;
+
+// Close lightbox when clicking on background
+const lightboxEl = document.getElementById("lightbox");
+if (lightboxEl) {
+  lightboxEl.addEventListener("click", (e) => {
+    if (e.target.id === "lightbox") closeLightbox();
+  });
+}
+
+// Keyboard navigation for lightbox
+document.addEventListener("keydown", (e) => {
+  const lb = document.getElementById("lightbox");
+  if (!lb || lb.style.display !== "flex") return;
+  if (e.key === "ArrowRight") nextPhoto();
+  if (e.key === "ArrowLeft") prevPhoto();
+  if (e.key === "Escape") closeLightbox();
+});
 
 // Booking form — AJAX via FormSubmit
 const form = document.getElementById("booking-form");
