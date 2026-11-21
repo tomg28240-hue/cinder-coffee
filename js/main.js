@@ -174,20 +174,16 @@ if (menuSection && menuCards.length) {
   });
 }
 
-// Gallery photos scatter on container hover (3 photos, beautiful spread)
+// Gallery photos: simple hover scale (no scatter to avoid overflow)
 const galleryScroll = document.querySelector(".h-scroll");
 if (galleryScroll) {
   const photos = galleryScroll.querySelectorAll("div");
-  galleryScroll.addEventListener("mouseenter", () => {
-    photos.forEach((photo, i) => {
-      const offsets = [-25, 0, 25];
-      const rotations = [-3, 0, 3];
-      gsap.to(photo, { x: offsets[i] || 0, y: -10, rotation: rotations[i] || 0, scale: 1.03, duration: 0.5, ease: "power3.out" });
+  photos.forEach((photo) => {
+    photo.addEventListener("mouseenter", () => {
+      gsap.to(photo, { scale: 1.05, y: -8, duration: 0.3, ease: "power2.out" });
     });
-  });
-  galleryScroll.addEventListener("mouseleave", () => {
-    photos.forEach((photo) => {
-      gsap.to(photo, { x: 0, y: 0, rotation: 0, scale: 1, duration: 0.5, ease: "power3.out" });
+    photo.addEventListener("mouseleave", () => {
+      gsap.to(photo, { scale: 1, y: 0, duration: 0.3, ease: "power2.out" });
     });
   });
 }
